@@ -1,16 +1,22 @@
-* {
-  box-sizing: border-box;
+:root {
+  --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --primary: #4e75ff;
+  --primary-hover: #6c8cff;
+  --border: #808080;
+  --text: #2e2f42;
+  --transition: 0.25s ease;
 }
 
-body {
-  margin: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #212121;
-  line-height: 1.5;
+/* #region reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 ul {
@@ -19,12 +25,112 @@ ul {
   list-style: none;
 }
 
+a {
+  color: currentColor;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+/* #endregion */
 
+/* #region Common */
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.task-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 24px;
+}
+
+.task-list-link {
+  padding: 4px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  height: 40px;
+  background: var(--primary);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #fff;
+  transition: background-color var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+}
+/* #endregion */
+
+/* #region Task 1 */
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 392px;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #f6f6fe;
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--text);
+}
+
+.item-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  color: currentColor;
+}
+
+.item-list li {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  height: 40px;
+  padding: 8px 16px;
+  letter-spacing: 0.04em;
+}
+
+.item-list li:not(:last-child) {
+  margin-bottom: 8px;
+}
+/* #endregion */
+
+/* #region Task 2 */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -40,8 +146,95 @@ img {
 }
 
 .gallery-item > img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   overflow: hidden;
 }
+/* #endregion */
+
+/* #region Task 3 */
+.wrapper {
+  max-width: 408px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.name-input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 16px;
+  padding: 16px 8px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  outline: none;
+}
+
+.name-input:hover {
+  border-color: #000;
+}
+
+.greet-text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* #endregion */
+
+/* #region Task 4 */
+.login-form {
+  max-width: 408px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.form-input-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-input-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.form-input-fields input {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  height: 40px;
+  padding: 16px 8px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  outline: none;
+}
+
+.form-input-fields input:hover {
+  border-color: #000;
+}
+/* #endregion */
+
+/* #region Task 5 */
+.widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 345px;
+  margin: 0 auto;
+  padding: 100px 0px;
+}
+
+.widget p {
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+/* #endregion */
